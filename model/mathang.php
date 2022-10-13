@@ -70,5 +70,21 @@ class MATHANG{
             exit();
         }
     }
+
+    public function themmathang(){
+        $dbcon = DATABASE::connect();
+        try{
+            $sql = "SELECT * FROM mathang";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
 }
 ?>

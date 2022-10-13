@@ -14,7 +14,7 @@ $dm = new DANHMUC();
 
 switch($action){
     case "xem":
-               
+               $danhmuc = $dm->laytatcadanhmuc();
         include("main.php");
         break;
     
